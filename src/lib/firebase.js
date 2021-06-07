@@ -2,6 +2,8 @@ import Firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+import { seedDatabase } from '../seed';
+
 const config = {
   apiKey: 'AIzaSyCrIzzRhAmhlWRSQYjA-NovbAcKFAj93fg',
   authDomain: 'finsta-fa15a.firebaseapp.com',
@@ -13,5 +15,8 @@ const config = {
 
 const firebase = Firebase.initializeApp(config);
 const { FieldValue } = Firebase.firestore;
+
+// only need to seed once, Data has already been loaded to firestore
+// seedDatabase(firebase);
 
 export { firebase, FieldValue };

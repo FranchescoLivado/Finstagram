@@ -41,12 +41,12 @@ export function seedDatabase(firebase) {
   ];
 
   // eslint-disable-next-line prefer-const
-  for (let k = 0; k < users.length; k++) {
+  for (let k = 0; k < users.length; k += 1) {
     firebase.firestore().collection('users').add(users[k]);
   }
 
   // eslint-disable-next-line prefer-const
-  for (let i = 1; i <= 5; ++i) {
+  for (let i = 1; i <= 5; i += 1) {
     firebase
       .firestore()
       .collection('photos')
