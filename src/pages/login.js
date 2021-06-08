@@ -18,5 +18,5 @@ export default function Login() {
     document.title = 'Login - Finstagram';
   }, []);
 
-  return <div>Login</div>;
+  return <div className="container flex mx-auto max-w-screem-md items-center h-screen">Login</div>;
 }
