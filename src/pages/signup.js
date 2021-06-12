@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 import { doesUsernameExist, doesEmailExist } from '../services/firebase';
@@ -74,17 +75,25 @@ export default function SignUp() {
 
   return (
     <div className="container flex mx-auto max-w-screem-md items-center h-screen">
-      <div className="flex w-3/5">
+      <div className="flex w-2/5">
         <img src="/images/Fox_-_Super_Smash_Bros 1.png" alt="melee character" />
       </div>
-      <div className="flex flex-col w-2/5">
+      <motion.div animate={{ height: '85%' }} initial={{ height: '55%' }} className="form-bg">
+        <h2 className="text-white font-bold text-7xl">SIGN UP</h2>
         {error && <p className="mb-4 text-xs text-white">{error}</p>}
-        <form onSubmit={handleSignup} method="POST">
+        <motion.form
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          onSubmit={handleSignup}
+          method="POST"
+          className="w-full"
+        >
           <input
             aria-label="Enter your email"
             type="text"
             placeholder="Email"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block btn"
             onChange={({ target }) => setEmailAddress(target.value)}
             value={emailAddress}
           />
@@ -92,7 +101,7 @@ export default function SignUp() {
             aria-label="Enter your password"
             type="password"
             placeholder="Password"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block btn"
             onChange={({ target }) => setPassword(target.value)}
             value={password}
           />
@@ -100,7 +109,7 @@ export default function SignUp() {
             aria-label="Confirm your password"
             type="password"
             placeholder="Confirm Password"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block btn"
             onChange={({ target }) => setPasswordConfirm(target.value)}
             value={passwordConfirm}
           />
@@ -108,7 +117,7 @@ export default function SignUp() {
             aria-label="Enter your Netplay Tag"
             type="text"
             placeholder="TEST#1234 (Netplay Tag)"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block btn"
             onChange={({ target }) => setNetplayTag(target.value)}
             value={netplayTag}
           />
@@ -116,22 +125,22 @@ export default function SignUp() {
             aria-label="Enter your Username"
             type="text"
             placeholder="Username"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block btn"
             onChange={({ target }) => setUsername(target.value)}
             value={username}
           />
-          <button disabled={isInvalid} type="submit" className="bg-blue-500 text-white">
+          <button disabled={isInvalid} type="submit" className="form-submit btn">
             Create Account
           </button>
 
           <div>
             <p className="text-white">Already have an account?</p>
-            <Link to={ROUTES.SIGN_UP} className="text-white">
+            <Link to={ROUTES.LOGIN} className="text-white">
               Login
             </Link>
           </div>
-        </form>
-      </div>
+        </motion.form>
+      </motion.div>
     </div>
   );
 }

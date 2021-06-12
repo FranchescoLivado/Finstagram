@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 
@@ -30,29 +31,45 @@ export default function Login() {
     document.title = 'Login - Finstagram';
   }, []);
 
+  // Custom variant
+  // Our custom easing
+  const easing = [0.6, -0.05, 0.01, 0.99];
+  const exit = {
+    exit: {
+      opacity: 0
+    }
+  };
+
   return (
     <div className="container flex mx-auto max-w-screem-md items-center h-screen">
-      <div className="flex w-3/5">
+      <div className="flex w-2/5">
         <img src="/images/Fox_-_Super_Smash_Bros 1.png" alt="melee character" />
       </div>
-      <div className="flex flex-col w-2/5">
+      <motion.div animate={{ height: '55%' }} className="form-bg">
         {error && <p className="mb-4 text-xs text-white">{error}</p>}
-        <form onSubmit={handleLogin} method="POST">
+        <motion.form
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          onSubmit={handleLogin}
+          method="POST"
+          className="w-full"
+        >
           <input
             aria-label="Enter your email"
             type="text"
             placeholder="Email"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block w-4/6 btn"
             onChange={({ target }) => setEmailAddress(target.value)}
           />
           <input
             aria-label="Enter your password"
             type="password"
             placeholder="Password"
-            className="text-sm text-gray-base"
+            className=" text-gray-base block w-4/6 btn"
             onChange={({ target }) => setPassword(target.value)}
           />
-          <button disabled={isInvalid} type="submit" className="bg-blue-500 text-white">
+          <button disabled={isInvalid} type="submit" className="form-submit  btn">
             Login
           </button>
 
@@ -62,8 +79,8 @@ export default function Login() {
               Create an Account
             </Link>
           </div>
-        </form>
-      </div>
+        </motion.form>
+      </motion.div>
     </div>
   );
 }
