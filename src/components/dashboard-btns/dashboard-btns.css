@@ -1,0 +1,41 @@
+/**/
+
+#loginAcc:hover #Vector_4,
+#createAcc:hover #Vector_4 {
+  fill: #040612;
+}
+#loginAcc:hover #Vector_5,
+#createAcc:hover #Vector_5 {
+  fill: #040612;
+}
+#loginAcc:hover #Vector_6,
+#createAcc:hover #Vector_6 {
+  fill: #040612;
+}
+#loginAcc:hover #Vector_7,
+#createAcc:hover #Vector_7 {
+  fill: #040612;
+}
+
+#loginAcc:hover #Login,
+#createAcc:hover #account-btn {
+  fill: #040612;
+}
+
+#loginAcc:hover #Vector,
+#createAcc:hover #Vector {
+  fill: #ffcb00;
+}
+#loginAcc:hover #Vector_2,
+#createAcc:hover #Vector_2 {
+  fill: #ffcb00;
+}
+#loginAcc:hover #Vector_3,
+#createAcc:hover #Vector_3 {
+  fill: #ffcb00;
+}
+
+#createAcc,
+#loginAcc {
+  display: inline-block;
+}
