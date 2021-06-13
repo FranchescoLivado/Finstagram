@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <div className="nav">
-      <img src="/images/SmashBall 2.svg" alt="smash ball logo" />
+      <img className="logo" src="/images/SmashBall 2.svg" alt="smash ball logo" />
       <div className="w-1/6  my-auto">
         <ul className="flex justify-evenly">
           <li className="text-white">

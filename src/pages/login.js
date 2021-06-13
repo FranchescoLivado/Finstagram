@@ -32,7 +32,7 @@ export default function Login() {
   }, []);
 
   return (
-    <div className="container flex mx-auto max-w-screem-md items-center h-screen">
+    <div className="content-container">
       <div className="flex w-2/5">
         <img src="/images/Fox_-_Super_Smash_Bros 1.png" alt="melee character" />
       </div>
@@ -60,13 +60,13 @@ export default function Login() {
             className=" text-gray-base block w-4/6 btn"
             onChange={({ target }) => setPassword(target.value)}
           />
-          <button disabled={isInvalid} type="submit" className="form-submit  btn">
+          <button disabled={isInvalid} type="submit" className="form-submit btn signup-text">
             Login
           </button>
 
           <div>
-            <p className="text-white">Don't have an account?</p>
-            <Link to={ROUTES.SIGN_UP} className="text-white">
+            <p className="text-white signup-text">Don't have an account?</p>
+            <Link to={ROUTES.SIGN_UP} className="text-white signup-text">
               Create an Account
             </Link>
           </div>

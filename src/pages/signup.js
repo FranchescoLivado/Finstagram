@@ -74,12 +74,12 @@ export default function SignUp() {
   }, []);
 
   return (
-    <div className="container flex mx-auto max-w-screem-md items-center h-screen">
+    <div className="content-container">
       <div className="flex w-2/5">
         <img src="/images/Fox_-_Super_Smash_Bros 1.png" alt="melee character" />
       </div>
       <motion.div animate={{ height: '85%' }} initial={{ height: '55%' }} className="form-bg">
-        <h2 className="text-white font-bold text-7xl">SIGN UP</h2>
+        <h2 className="signup-header">SIGN UP</h2>
         {error && <p className="mb-4 text-xs text-white">{error}</p>}
         <motion.form
           animate={{ opacity: 1 }}
@@ -129,13 +129,13 @@ export default function SignUp() {
             onChange={({ target }) => setUsername(target.value)}
             value={username}
           />
-          <button disabled={isInvalid} type="submit" className="form-submit btn">
+          <button disabled={isInvalid} type="submit" className="form-submit btn signup-text">
             Create Account
           </button>
 
           <div>
-            <p className="text-white">Already have an account?</p>
-            <Link to={ROUTES.LOGIN} className="text-white">
+            <p className="text-white signup-text">Already have an account?</p>
+            <Link to={ROUTES.LOGIN} className="text-white signup-text">
               Login
             </Link>
           </div>

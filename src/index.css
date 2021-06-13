@@ -12,6 +12,12 @@
   margin-bottom: 2rem;
 }
 
+.content-container {
+  @apply container flex mx-auto items-center;
+  margin-top: calc(42px + 2.5rem);
+  height: calc(100vh - (42px + 2.5rem));
+}
+
 .form-bg {
   @apply flex flex-col w-1/2 items-center text-2xl text-center;
 
@@ -25,29 +31,38 @@
 
 .nav {
   @apply flex justify-between;
-
+  padding: 1.25rem 4rem;
   background-color: #282828;
   position: fixed;
   top: 0;
   width: 100%;
 }
 
+.signup-header {
+  @apply text-white font-bold text-7xl;
+  letter-spacing: 1.53125rem;
+}
+
 @tailwind utilities;
 
 /* @font-face {
-  font-family: "asdf";
-  src: url("./fonts/A-OTF-FolkPro-Heavy.otf") format("otf");
-}
+  font-family: "Bebas Neue", cursive;
+  src: url("./fonts/BebasNeue-Regular.ttf") format("ttf");
+} */
 * {
-  font-family: "asdf"; 
-}*/
-input {
-  width: 78%;
+  font-family: "Bebas Neue", cursive;
 }
 
 body {
   background-color: #040612;
 }
+
+input {
+  width: 78%;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.2rem;
+}
+
 input[type="text"],
 input[type="password"] {
   font-size: inherit;
@@ -56,12 +71,19 @@ input[type="password"] {
 input:focus-visible {
   outline: none;
 }
-
+li a {
+  font-size: 1.5rem;
+}
+#root {
+  position: relative;
+}
 .form-submit {
   background-color: #ffcb00 !important;
   color: #040612;
 }
-
-#root {
-  position: relative;
+.logo {
+  width: 42.33px;
+}
+.signup-text {
+  letter-spacing: 0.2rem;
 }
