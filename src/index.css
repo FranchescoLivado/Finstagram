@@ -27,15 +27,20 @@
   @apply flex justify-between;
 
   background-color: #282828;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 @tailwind utilities;
 
 /* @font-face {
-  font-family: "FolkPro-Heavy";
-  src: url("/font/a-otf-folkpro-heavy-webfont.woff");
-} */
-
+  font-family: "asdf";
+  src: url("./fonts/A-OTF-FolkPro-Heavy.otf") format("otf");
+}
+* {
+  font-family: "asdf"; 
+}*/
 input {
   width: 78%;
 }
@@ -55,4 +60,8 @@ input:focus-visible {
 .form-submit {
   background-color: #ffcb00 !important;
   color: #040612;
+}
+
+#root {
+  position: relative;
 }
