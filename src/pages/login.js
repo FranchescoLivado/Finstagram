@@ -31,15 +31,6 @@ export default function Login() {
     document.title = 'Login - Finstagram';
   }, []);
 
-  // Custom variant
-  // Our custom easing
-  const easing = [0.6, -0.05, 0.01, 0.99];
-  const exit = {
-    exit: {
-      opacity: 0
-    }
-  };
-
   return (
     <div className="container flex mx-auto max-w-screem-md items-center h-screen">
       <div className="flex w-2/5">
